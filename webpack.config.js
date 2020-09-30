@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
 
-    entry: './src/app.js',
+    entry: './src/index.js',
 
     output: {
         path: path.join(__dirname, 'public'),
@@ -10,10 +10,21 @@ module.exports = {
     },
 
     module: {
-        rules: [{
+        rules: [
+            {
             loader: 'babel-loader',
-            test: /\.js$/
-        }]
+            test: /\.js$/,
+            exclude: /node_modules/
+        },
+
+        {
+            test: /\.css$/,
+            use: [
+              'style-loader',
+              'css-loader'
+            ]
+          }
+    ]
     }
 
 }

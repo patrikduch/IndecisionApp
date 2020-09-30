@@ -1,12 +1,25 @@
-console.log("App.js is running.");
+/* @flow */
 
-var template = <p>aaa</p>;
+import * as React from 'react';
+import Header from './components/skeleton/Header';
 
-console.log(template);
+/**
+ * @type AppPropsType Props type anotaton for App component.
+ */
+type AppPropsType = {}
 
-var appRoot = document.getElementById('app-root');
+/**
+ * @class Root component that encapsulates all child components.
+ */
+class App extends React.Component<AppPropsType> {
 
+    render(): React.Node {
+        return (
+            <>
+                <Header />
+            </>
+        );
+    }
+}
 
-ReactDOM.render(template, appRoot);
-
-console.log(appRoot);
+export default App;
