@@ -32,7 +32,7 @@
     "build:dev": "webpack --config=webpack.config.client.js --watch",
     "build:prod": "webpack --config=webpack.config.client.js -p --env producton",
     "flow": "FLOW_WATCH_NO_CLEAR_CONSOLE=1 flow-watch -q",
-    "start": "node server.js",
+    "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
   }
 }
