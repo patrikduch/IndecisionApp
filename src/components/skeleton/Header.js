@@ -13,8 +13,7 @@ class Header extends React.Component<HeaderPropsType> {
     componentDidMount() {
         console.log("Header");
     }
-
-
+    
     render(): React.Node{
         return (
             <header className='header'>

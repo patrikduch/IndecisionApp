@@ -2,12 +2,10 @@ const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-
 module.exports = (env) => {
 
     console.log('env', env);
     const isProduction = env == 'production';
-
 
     return {
             entry: './src/index.js',
@@ -44,7 +42,7 @@ module.exports = (env) => {
                             require('autoprefixer')({}),
                             require('cssnano')({ preset: 'default' }),
                         ],
-                        minimize: true,
+                        minimize: false
                         },
                     },
 
@@ -62,7 +60,8 @@ module.exports = (env) => {
                 filename: "App.css",
                 chunkFilename: "",  
             }),
-        ]
+        
+        ],
 
     }
 
