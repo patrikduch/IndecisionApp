@@ -29,3 +29,11 @@ https://flow.org/en/docs/install/
 # CSS styles
 
 https://blog.jakoblind.no/css-modules-webpack/
+
+
+# JS minification
+
+https://www.npmjs.com/package/terser-webpack-plugin?activeTab=readme
+
+
+terser-webpack-plugin

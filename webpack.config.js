@@ -1,30 +1,72 @@
 const path = require('path');
 
-module.exports = {
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-    entry: './src/index.js',
 
-    output: {
-        path: path.join(__dirname, 'public'),
-        filename: 'bundle.js'
-    },
+module.exports = (env) => {
 
-    module: {
-        rules: [
-            {
-            loader: 'babel-loader',
-            test: /\.js$/,
-            exclude: /node_modules/
+    console.log('env', env);
+    const isProduction = env == 'production';
+
+
+    return {
+            entry: './src/index.js',
+
+            output: {
+                path: path.join(__dirname, 'public'),
+                filename: 'bundle.js'
+            },
+
+
+            devtool: isProduction ? 'source-map': 'eval',
+
+            module: {
+                rules: [
+                    {
+                    loader: 'babel-loader',
+                    test: /\.js$/,
+                    exclude: /node_modules/
+                },
+
+
+                {
+                    test: /\.s?css$$/,
+                    use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                        ident: 'postcss',
+                        plugins: [
+                            require('autoprefixer')({}),
+                            require('cssnano')({ preset: 'default' }),
+                        ],
+                        minimize: true,
+                        },
+                    },
+
+                    'sass-loader'
+                    ],
+                },
+            ]    
         },
 
-        {
-            test: /\.css$/,
-            use: [
-              'style-loader',
-              'css-loader'
-            ]
-          }
-    ]
+    
+        plugins: [
+            new MiniCssExtractPlugin({
+                // Options similar to the same options in webpackOptions.output
+                //both options are optional
+                filename: "App.css",
+                chunkFilename: "",  
+            }),
+        ]
+
     }
 
+
 }
+
+

@@ -1,6 +1,6 @@
-/* @flow */
-import '../skeleton/Header.css';   
+import '../skeleton/Header.scss';   
 
+/* @flow */
 import * as React from 'react';
 
 /**
@@ -9,13 +9,17 @@ import * as React from 'react';
 type HeaderPropsType = {}
 
 class Header extends React.Component<HeaderPropsType> {
+
+    componentDidMount() {
+        console.log("Header");
+    }
+
+
     render(): React.Node{
         return (
-            <div>
-                <header className='header'>
-                    Headings
-                </header>
-            </div>
+            <header className='header'>
+                Headings
+            </header>
         );
     }
 }

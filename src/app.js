@@ -1,5 +1,4 @@
 /* @flow */
-
 import * as React from 'react';
 import Header from './components/skeleton/Header';
 
@@ -17,6 +16,12 @@ class App extends React.Component<AppPropsType> {
         return (
             <>
                 <Header />
+                <h1>Indecision App</h1> 
+                <p>This is some info</p>
+                <ol> 
+                    <li>Item one</li>
+                    <li>Item two</li>
+                </ol>
             </>
         );
     }
