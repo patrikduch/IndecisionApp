@@ -20,10 +20,14 @@ https://stackoverflow.com/questions/49182862/preset-files-are-not-allowed-to-exp
 
 
 # FLOW
-
 https://www.npmjs.com/package/flow-watch
 https://flow.org/en/docs/usage/
 https://flow.org/en/docs/install/
+
+
+# FLOW NODE_MODULES ERRORS
+https://github.com/facebook/flow/issues/5023
+
 
 
 # CSS styles
@@ -44,3 +48,5 @@ terser-webpack-plugin
 
 heroku --version
 git push heroku master
+
+
