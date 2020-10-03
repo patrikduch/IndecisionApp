@@ -1,26 +1,37 @@
 /* @flow */
 import * as React from 'react';
+import OptionForm from './components/options/form/Option-Form';
 import Header from './components/skeleton/Header';
 
 /**
  * @type AppPropsType Props type anotaton for App component.
  */
-type AppPropsType = {}
+type AppPropsType = {};
+
+/**
+ * @type AppStateType State type anotaton for App component.
+ */
+type AppStateType = {
+    options: string[];
+};
 
 /**
  * @class Root component that encapsulates all child components.
  */
-class App extends React.Component<AppPropsType> {
+class App extends React.Component<AppPropsType,AppStateType> {
 
     title: string = 'Indecision app';
     subtitle: string = 'Put your life in the hands of a computer';
-    options: Array<string> = ['One', 'Two'];
+
+    state: AppStateType = {
+        options: ['One', 'Two']
+    }
 
     renderOptions() : React.Node {
-        if (this.options.length === 0) {
+        if (this.state.options.length === 0) {
             return (<p>No options</p>);
         } else {
-            const items = this.options.map((option => {
+            const items = this.state.options.map((option => {
                 return <li>{option}</li>
             }));
 
@@ -35,13 +46,31 @@ class App extends React.Component<AppPropsType> {
         }
     }
 
+    /**
+     * @function addOption add new option into options array.
+     * @param {*} option 
+     */
+    addOption: ((option: string) => void) = (option: string) => {
+        
+        // Add new option item into array
+        const newArray = this.state.options;
+        newArray.push(option);
+        
+        // Update local state option array with newly inserted value
+        this.setState({
+            options: newArray
+        });
+    }
+
     render(): React.Node {
+
         return (
             <React.Fragment>
                 <Header />
                 <h1>{this.title}</h1>
-                {this.renderOptions()}
                 {this.subtitle && <p>{this.subtitle}</p>}
+                {this.renderOptions()}
+                <OptionForm addOption={this.addOption} />
             </React.Fragment>
         );
     }

@@ -17,7 +17,7 @@ class Header extends React.Component<HeaderPropsType> {
     render(): React.Node{
         return (
             <header className='header'>
-                Headings
+                <h1>Headings</h1>
             </header>
         );
     }
