@@ -2,6 +2,7 @@ import './Option-List.scss';
 
 /* @flow */
 import * as React from 'react';
+import uniqid from 'uniqid';
 
 /**
  * @type OptionListPropsType Props type anotaton for option list component.
@@ -26,7 +27,7 @@ class OptionList extends React.Component<OptionListPropsType, OptionListStateTyp
             return (<p>No options</p>);
         } else {
             const items = this.props.options.map((option => {
-                return <li>{option}</li>
+                return <li key={uniqid()}>{option}</li>
             }));
 
             return (
