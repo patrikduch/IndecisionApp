@@ -1,6 +1,8 @@
 /* @flow */
 import * as React from 'react';
 import OptionForm from './components/options/form/Option-Form';
+import OptionList from './components/options/list/Option-List';
+import OptionListRemoval from './components/options/list/Option-List-Removal';
 import Header from './components/skeleton/Header';
 
 /**
@@ -27,25 +29,6 @@ class App extends React.Component<AppPropsType,AppStateType> {
         options: ['One', 'Two']
     }
 
-    renderOptions() : React.Node {
-        if (this.state.options.length === 0) {
-            return (<p>No options</p>);
-        } else {
-            const items = this.state.options.map((option => {
-                return <li>{option}</li>
-            }));
-
-            return (
-                <React.Fragment>
-                    <p>Here are your options:</p>
-                    <ol>
-                        {items}
-                    </ol>
-                </React.Fragment>
-            );
-        }
-    }
-
     /**
      * @function addOption add new option into options array.
      * @param {*} option 
@@ -62,15 +45,22 @@ class App extends React.Component<AppPropsType,AppStateType> {
         });
     }
 
+
+    removeAll: (() => void) = () =>{
+        this.setState({
+            options: []
+        })
+    }
+
     render(): React.Node {
 
         return (
             <React.Fragment>
-                <Header />
-                <h1>{this.title}</h1>
+                <Header title={this.title} />
                 {this.subtitle && <p>{this.subtitle}</p>}
-                {this.renderOptions()}
+                <OptionList options={this.state.options} />
                 <OptionForm addOption={this.addOption} />
+                <OptionListRemoval removeAll={this.removeAll} />
             </React.Fragment>
         );
     }
