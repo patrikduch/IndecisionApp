@@ -43,3 +43,4 @@ terser-webpack-plugin
 # HEROKU
 
 heroku --version
+git push heroku master
