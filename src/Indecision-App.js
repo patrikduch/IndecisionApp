@@ -1,3 +1,7 @@
+import 'normalize.css/normalize.css';
+import './styles/App.scss';
+
+
 /* @flow */
 import * as React from 'react';
 import OptionForm from './components/options/form/Option-Form';
@@ -9,25 +13,24 @@ import Header from './components/skeleton/Header';
 /**
  * @type AppPropsType Props type anotaton for App component.
  */
-type AppPropsType = {};
+type IndecisionAppPropsType = {};
 
 /**
  * @type AppStateType State type anotaton for App component.
  */
-type AppStateType = {
+type IndecisionAppStateType = {
     options: string[];
 };
-
 
 /**
  * @class Root component that encapsulates all child components.
  */
-class App extends React.Component<AppPropsType,AppStateType> {
+class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionAppStateType> {
 
     title: string = 'Indecision app';
     subtitle: string = 'Put your life in the hands of a computer';
 
-    state: AppStateType = {
+    state: IndecisionAppStateType = {
         options: ['One', 'Two'],
     }
 
@@ -59,16 +62,14 @@ class App extends React.Component<AppPropsType,AppStateType> {
     render(): React.Node {
         return (
             <React.Fragment>
-                <Header title={this.title} />
-                {this.subtitle && <h2>{this.subtitle}</h2>}
+                <Header title={this.title} subtitle={this.subtitle} />
                 <OptionListDecision optionsLength={this.state.options.length} options={this.state.options} />
                 <OptionListRemoval removeAll={this.removeAll} />
                 <OptionList options={this.state.options} />
                 <OptionForm addOption={this.addOption} />
-                
             </React.Fragment>
         );
     }
 }
 
-export default App;
+export default IndecisionApp;

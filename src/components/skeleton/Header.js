@@ -1,4 +1,4 @@
-import './Header';  
+import './Header.scss';  
  
 /* @flow */
 import * as React from 'react';
@@ -8,6 +8,7 @@ import * as React from 'react';
  */
 type HeaderPropsType = {
     title: string;
+    subtitle: String;
 }
 /**
  * @class Header Heading's content of web application.
@@ -17,7 +18,8 @@ class Header extends React.Component<HeaderPropsType> {
     render(): React.Node{
         return (
             <header className='header'>
-                <h1>{this.props.title}</h1>
+                <h1 className='header__title'>{this.props.title}</h1>
+                {this.props.subtitle && <h2 className='header__subtitle'>{this.props.subtitle}</h2>}
             </header>
         );
     };
