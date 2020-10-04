@@ -63,10 +63,12 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
         return (
             <React.Fragment>
                 <Header title={this.title} subtitle={this.subtitle} />
-                <OptionListDecision optionsLength={this.state.options.length} options={this.state.options} />
-                <OptionListRemoval removeAll={this.removeAll} />
-                <OptionList options={this.state.options} />
-                <OptionForm addOption={this.addOption} />
+                <div className='container'>
+                    <OptionListDecision optionsLength={this.state.options.length} options={this.state.options} />
+                    <OptionListRemoval removeAll={this.removeAll} />
+                    <OptionList options={this.state.options} />
+                    <OptionForm addOption={this.addOption} />
+                </div>
             </React.Fragment>
         );
     }

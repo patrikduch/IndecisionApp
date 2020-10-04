@@ -1,8 +1,8 @@
-import './Option-List-Decision';
+import './Option-List-Decision.scss';
 
 /* @flow */
 import * as React from 'react';
-
+import { BigButton } from '../../common/Button';
 
 /**
  * @type OptionListDecisionPropsType Props type anotaton for options list decision component.
@@ -26,7 +26,7 @@ class OptionListDecision extends React.Component<OptionListDecisionPropsType> {
 
     render() {
         return (
-            <button disabled={this.props.options.length === 0} onClick={this.makeDecisionHandler}>What should I do?</button>
+            <BigButton disabled={this.props.options.length === 0} onClick={this.makeDecisionHandler}>What should I do?</BigButton>
         );
     }
 }

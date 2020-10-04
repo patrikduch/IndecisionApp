@@ -35,6 +35,10 @@ https://github.com/facebook/flow/issues/5023
 https://blog.jakoblind.no/css-modules-webpack/
 
 
+# CSS RESET
+https://necolas.github.io/normalize.css/
+
+
 # JS minification
 
 https://www.npmjs.com/package/terser-webpack-plugin?activeTab=readme
@@ -45,15 +49,13 @@ terser-webpack-plugin
 
 
 # HEROKU
-
 heroku --version
 git push heroku master
 
 
 
 # TESTING
-
-
 Unit tests (Jest)
 Components unit tests (Jest + Enzyme)
+
 

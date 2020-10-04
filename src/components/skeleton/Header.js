@@ -17,10 +17,14 @@ class Header extends React.Component<HeaderPropsType> {
     
     render(): React.Node{
         return (
-            <header className='header'>
-                <h1 className='header__title'>{this.props.title}</h1>
-                {this.props.subtitle && <h2 className='header__subtitle'>{this.props.subtitle}</h2>}
-            </header>
+            <div className='header'>
+                <header>
+                    <div className='container'>
+                        <h1 className='header__title'>{this.props.title}</h1>
+                        {this.props.subtitle && <h2 className='header__subtitle'>{this.props.subtitle}</h2>} 
+                    </div>
+                </header>
+            </div>
         );
     };
 }

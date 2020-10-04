@@ -4,6 +4,7 @@ import './Option-Form';
 /* @flow */
 import * as React from 'react';
 import OptionListRemoval from '../list/Option-List-Removal';
+import { ClassicButton } from '../../common/Button';
 
 /**
  * @type OptionFormPropsType Props type anotaton for adding new options via Form element.
@@ -32,7 +33,7 @@ class OptionForm extends React.Component<OptionFormPropsType> {
             <React.Fragment>
                 <form onSubmit={this.onFormSubmit}>
                     <input type='text' name='option' />
-                    <button>Add option</button>
+                    <ClassicButton>Add option</ClassicButton>
                 </form>
             </React.Fragment>
         );
