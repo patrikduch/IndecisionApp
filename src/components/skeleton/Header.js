@@ -1,4 +1,4 @@
-import './Header.scss';  
+import './Header';  
  
 /* @flow */
 import * as React from 'react';
@@ -7,7 +7,7 @@ import * as React from 'react';
  * @type HeaderPropsType Type anotation for header component.
  */
 type HeaderPropsType = {
-    title: String;
+    title: string;
 }
 /**
  * @class Header Heading's content of web application.

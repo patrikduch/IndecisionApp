@@ -50,3 +50,10 @@ heroku --version
 git push heroku master
 
 
+
+# TESTING
+
+
+Unit tests (Jest)
+Components unit tests (Jest + Enzyme)
+
