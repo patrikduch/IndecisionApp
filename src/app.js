@@ -18,6 +18,7 @@ type AppStateType = {
     options: string[];
 };
 
+
 /**
  * @class Root component that encapsulates all child components.
  */
@@ -28,7 +29,6 @@ class App extends React.Component<AppPropsType,AppStateType> {
 
     state: AppStateType = {
         options: ['One', 'Two'],
-        decisionNumber: null
     }
 
     /**
@@ -60,8 +60,7 @@ class App extends React.Component<AppPropsType,AppStateType> {
         return (
             <React.Fragment>
                 <Header title={this.title} />
-                {this.subtitle && <p>{this.subtitle}</p>}
-
+                {this.subtitle && <h2>{this.subtitle}</h2>}
                 <OptionListDecision optionsLength={this.state.options.length} options={this.state.options} />
                 <OptionListRemoval removeAll={this.removeAll} />
                 <OptionList options={this.state.options} />
