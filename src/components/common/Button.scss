@@ -5,6 +5,15 @@
     border: none;
     border-bottom: 0.3rem solid darken($color: $purple, $amount: 10%);
     color: white;
+    font-weight: 500;
+    padding: $s-size;
+}
+
+.button--link {
+    background: none;
+    border: none;
+    color: $off_white;
+    padding: 0;
 }
 
 .big-button {

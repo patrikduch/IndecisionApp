@@ -17,6 +17,8 @@ yarn add webpack -D
 
 https://stackoverflow.com/questions/49182862/preset-files-are-not-allowed-to-export-objects
 
+# WEBPACK
+https://webpack.js.org/configuration/mode/
 
 
 # FLOW

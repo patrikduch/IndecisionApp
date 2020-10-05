@@ -2,12 +2,12 @@ import './Option-List-Removal';
 
 /* @flow */
 import * as React from 'react';
+import { LinkButton} from '../../common/Button';
 
 /**
  * @type OptionListRemovalPropsType Props type anotaton for option's removal functionality.
  */
 type OptionListRemovalPropsType = {
-
     removeAll(): void;
 };
 
@@ -17,7 +17,7 @@ type OptionListRemovalPropsType = {
 class OptionListRemoval extends React.Component<OptionListRemovalPropsType> {
     render() {
         return (
-            <button onClick={this.props.removeAll}>Remove All</button>
+            <LinkButton onClick={this.props.removeAll}>Remove All</LinkButton>
         );
     }
 }

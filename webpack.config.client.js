@@ -15,7 +15,7 @@ module.exports = (env) => {
                 filename: 'bundle.js'
             },
 
-
+            mode: isProduction ? 'production' : 'development',
             devtool: isProduction ? 'source-map': 'eval',
 
             module: {

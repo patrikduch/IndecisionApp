@@ -1,14 +1,15 @@
+/* @flow */
 import 'normalize.css/normalize.css';
 import './styles/App.scss';
-
-
-/* @flow */
 import * as React from 'react';
-import OptionForm from './components/options/form/Option-Form';
-import OptionList from './components/options/list/Option-List';
-import OptionListDecision from './components/options/list/Option-List-Decision';
-import OptionListRemoval from './components/options/list/Option-List-Removal';
+import Action from './components/app/action/Action';
+import AddOption from './components/app/add-option/Add-Option';
 import Header from './components/skeleton/Header';
+import OptionListDecision from './components/app/list/Option-List-Decision';
+import OptionListRemoval from './components/app/list/Option-List-Removal';
+import { LinkButton } from './components/common/Button';
+import Options from './components/app/options/Options';
+
 
 /**
  * @type AppPropsType Props type anotaton for App component.
@@ -31,7 +32,7 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
     subtitle: string = 'Put your life in the hands of a computer';
 
     state: IndecisionAppStateType = {
-        options: ['One', 'Two'],
+        options: [],
     }
 
     /**
@@ -59,15 +60,27 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
         })
     }
 
+    /**
+     * @function remove single element from option array.
+     */
+    removeIndividual: ((searchedItem: string) => void) = (searchedItem) =>{
+        let tempArray = this.state.options;
+
+        tempArray = tempArray.filter((item => item !== searchedItem));
+
+        this.setState({
+            options: tempArray
+        });
+    }
+
     render(): React.Node {
         return (
             <React.Fragment>
                 <Header title={this.title} subtitle={this.subtitle} />
                 <div className='container'>
-                    <OptionListDecision optionsLength={this.state.options.length} options={this.state.options} />
-                    <OptionListRemoval removeAll={this.removeAll} />
-                    <OptionList options={this.state.options} />
-                    <OptionForm addOption={this.addOption} />
+                    <Action options={this.state.options} />
+                    <Options options={this.state.options}  removeIndividual={this.removeIndividual}/>
+                    <AddOption addOption={this.addOption} />               
                 </div>
             </React.Fragment>
         );

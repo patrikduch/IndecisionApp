@@ -8,7 +8,6 @@ import { BigButton } from '../../common/Button';
  * @type OptionListDecisionPropsType Props type anotaton for options list decision component.
  */
 type OptionListDecisionPropsType = {
-    optionsLength: number;
     options: string[];
 };
 
@@ -18,7 +17,7 @@ type OptionListDecisionPropsType = {
 class OptionListDecision extends React.Component<OptionListDecisionPropsType> {
 
     makeDecisionHandler = () => {
-        const randNum = Math.random() * this.props.optionsLength;
+        const randNum = Math.random() * this.props.options.length;
         const randomIndex = Math.floor(randNum);
 
         alert(this.props.options[randomIndex]);

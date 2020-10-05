@@ -1,24 +1,19 @@
-import '../form/Option-Form.scss';
-import './Option-Form';
-
 /* @flow */
+import './Add-Option.scss';
 import * as React from 'react';
-import OptionListRemoval from '../list/Option-List-Removal';
+import uniqid from 'uniqid';
 import { ClassicButton } from '../../common/Button';
 
 /**
- * @type OptionFormPropsType Props type anotaton for adding new options via Form element.
+ * @type AddOptionPropsType Props type anotaton for "AddOption" component.
  */
-type OptionFormPropsType = {
+type OptionsPropsType = {
     addOption(option: string): void;
-}
+};
 
-/**
- * @class OptionForm Form handler for adding new options.
- */
-class OptionForm extends React.Component<OptionFormPropsType> {
+class AddOption extends React.Component<OptionsPropsType> {
 
-    onFormSubmit = (e: any) => {
+    onFormSubmit: ((e: any) => void) = (e: any) => {
         e.preventDefault();
 
         const option = e.target.elements.option.value;
@@ -28,7 +23,8 @@ class OptionForm extends React.Component<OptionFormPropsType> {
         }
     }
 
-    render() {
+
+    render(): React.Node {
         return (
             <React.Fragment>
                 <form onSubmit={this.onFormSubmit}>
@@ -40,4 +36,5 @@ class OptionForm extends React.Component<OptionFormPropsType> {
     }
 }
 
-export default OptionForm;
+
+export default AddOption;

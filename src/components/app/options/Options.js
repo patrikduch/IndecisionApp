@@ -1,33 +1,28 @@
-import './Option-List.scss';
-
-/* @flow */
+// @flow
+import './Options.scss';
+import Option from '../option/Option';
 import * as React from 'react';
 import uniqid from 'uniqid';
 
 /**
- * @type OptionListPropsType Props type anotaton for option list component.
+ * @type OptionsPropsType Props type anotaton for Option list component.
  */
-type OptionListPropsType = {
+type OptionsPropsType = {
     options: string[];
+    removeIndividual(searchedElement: string) : void;
 };
 
 /**
- * @type OptionListStateType State type anotaton for option list component.
+ * @class Option list component that renders all todo items.
  */
-type OptionListStateType = {
-};
-
-/**
- * @class OptionList List of currently rendered options.
- */
-class OptionList extends React.Component<OptionListPropsType, OptionListStateType> {
+class Options extends React.Component<OptionsPropsType> {
 
     render(): React.Node {
         if (this.props.options === 0) {
             return (<p>No options</p>);
         } else {
             const items = this.props.options.map((option => {
-                return <li key={uniqid()}>{option}</li>
+                return <Option key={uniqid()} onClick={() => this.props.removeIndividual(option)} option={option} />;
             }));
 
             return (
@@ -42,4 +37,5 @@ class OptionList extends React.Component<OptionListPropsType, OptionListStateTyp
     }
 }
 
-export default OptionList;
+
+export default Options;
