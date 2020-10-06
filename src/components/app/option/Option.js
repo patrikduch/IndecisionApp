@@ -15,11 +15,10 @@ type OptionPropsType = {
  * @class Option  Single todo item.
  */
 class Option extends React.Component<OptionPropsType> {
-
     render(): React.Node {
         return (
             <li>{this.props.option}
-                <LinkButton onClick={this.props.onClick} >Remove</LinkButton>
+                <LinkButton onClick={this.props.onClick}>Remove</LinkButton>
             </li>
         );
     }
