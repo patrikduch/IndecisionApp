@@ -1,7 +1,7 @@
 // @flow
 import './Option.scss';
 import * as React from 'react';
-import { LinkButton } from '../../common/Button';
+import { LinkButton } from '../../common/button/Button';
 
 /**
  * @type OptionPropsType Props type anotaton of single option component element.

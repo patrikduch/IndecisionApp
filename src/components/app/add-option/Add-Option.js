@@ -2,7 +2,7 @@
 import './Add-Option.scss';
 import * as React from 'react';
 import uniqid from 'uniqid';
-import { ClassicButton } from '../../common/Button';
+import { ClassicButton } from '../../common/button/Button';
 
 /**
  * @type AddOptionPropsType Props type anotaton for "AddOption" component.

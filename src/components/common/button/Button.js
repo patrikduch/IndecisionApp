@@ -1,5 +1,5 @@
 /* @flow */
-import './Button.scss';
+import '../button/Button.scss';
 import * as React from 'react';
 
 /**

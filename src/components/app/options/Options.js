@@ -4,6 +4,7 @@ import Option from '../option/Option';
 import * as React from 'react';
 import uniqid from 'uniqid';
 
+
 /**
  * @type OptionsPropsType Props type anotaton for Option list component.
  */
@@ -27,9 +28,9 @@ class Options extends React.Component<OptionsPropsType> {
             return (
                 <React.Fragment>
                     <p>Here are your options:</p>
-                    <ol>
-                        {items}
-                    </ol>
+                        <ol>
+                            {items}
+                        </ol>
                 </React.Fragment>
             );
         }

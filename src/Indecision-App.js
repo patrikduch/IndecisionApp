@@ -7,9 +7,8 @@ import AddOption from './components/app/add-option/Add-Option';
 import Header from './components/skeleton/Header';
 import OptionListDecision from './components/app/list/Option-List-Decision';
 import OptionListRemoval from './components/app/list/Option-List-Removal';
-import { LinkButton } from './components/common/Button';
+import { LinkButton } from './components/common/button/Button';
 import Options from './components/app/options/Options';
-
 
 /**
  * @type AppPropsType Props type anotaton for App component.
@@ -21,6 +20,7 @@ type IndecisionAppPropsType = {};
  */
 type IndecisionAppStateType = {
     options: string[];
+    isTogglerVisible: boolean;
 };
 
 /**
@@ -33,6 +33,7 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
 
     state: IndecisionAppStateType = {
         options: [],
+        isTogglerVisible: false
     }
 
     /**
@@ -49,6 +50,10 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
         this.setState({
             options: newArray
         });
+
+        this.setState({
+            isTogglerVisible: true
+        })
     }
 
     /**
@@ -79,7 +84,7 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
                 <Header title={this.title} subtitle={this.subtitle} />
                 <div className='container'>
                     <Action options={this.state.options} />
-                    <Options options={this.state.options}  removeIndividual={this.removeIndividual}/>
+                    <Options options={this.state.options}  removeIndividual={this.removeIndividual} />
                     <AddOption addOption={this.addOption} />               
                 </div>
             </React.Fragment>

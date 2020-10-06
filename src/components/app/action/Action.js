@@ -1,6 +1,6 @@
 /* @flow */
 import './Action.scss';
-import { BigButton } from '../../common/Button';
+import { BigButton } from '../../common/button/Button';
 import * as React from 'react';
 
 /**

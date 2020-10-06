@@ -1,7 +1,8 @@
 
 // @flow
-import './Option-List-Removal';
-import { LinkButton} from '../../common/Button';
+import './Option-List-Removal.scss';
+
+import { LinkButton } from '../../common/button/Button';
 import * as React from 'react';
 
 /**
