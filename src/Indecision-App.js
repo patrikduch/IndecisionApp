@@ -42,19 +42,26 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
      * @param {*} option 
      */
     addOption: ((option: string) => void) = (option: string) => {
-        
-        // Add new option item into array
-        const newArray = this.state.options;
-        newArray.push(option);
-        
-        // Update local state option array with newly inserted value
-        this.setState({
-            options: newArray
-        });
 
-        this.setState({
-            isTogglerVisible: true
-        })
+        if(!option) {
+            alert('Enter valid value to add item.');
+        } else if (this.state.options.indexOf(option) > -1) {
+            alert('This option already exists');
+        } else {
+
+            // Add new option item into array  
+            const newArray = this.state.options;    
+            newArray.push(option);
+                
+            // Update local state option array with newly inserted value
+            this.setState({
+                options: newArray   
+            });
+        
+            this.setState({
+                isTogglerVisible: true
+            });
+        }
     }
 
     /**
