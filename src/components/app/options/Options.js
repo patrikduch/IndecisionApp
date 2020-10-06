@@ -16,7 +16,6 @@ type OptionsPropsType = {
  * @class Option list component that renders all todo items.
  */
 class Options extends React.Component<OptionsPropsType> {
-
     render(): React.Node {
         if (this.props.options === 0) {
             return (<p>No options</p>);
