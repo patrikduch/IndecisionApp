@@ -1,9 +1,9 @@
 // @flow
 import './Options.scss';
+
 import Option from '../option/Option';
 import * as React from 'react';
 import uniqid from 'uniqid';
-
 
 /**
  * @type OptionsPropsType Props type anotaton for Option list component.

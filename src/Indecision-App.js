@@ -1,14 +1,15 @@
 /* @flow */
 import 'normalize.css/normalize.css';
 import './styles/App.scss';
-import * as React from 'react';
+
 import Action from './components/app/action/Action';
 import AddOption from './components/app/add-option/Add-Option';
 import Header from './components/skeleton/Header';
+import { LinkButton } from './components/common/button/Button';
 import OptionListDecision from './components/app/list/Option-List-Decision';
 import OptionListRemoval from './components/app/list/Option-List-Removal';
-import { LinkButton } from './components/common/button/Button';
 import Options from './components/app/options/Options';
+import * as React from 'react';
 
 /**
  * @type AppPropsType Props type anotaton for App component.
