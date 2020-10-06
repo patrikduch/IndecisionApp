@@ -1,6 +1,7 @@
 /* @flow */
 import 'normalize.css/normalize.css';
 import './styles/App.scss';
+import './components/app/Widget.scss';
 
 import Action from './components/app/action/Action';
 import AddOption from './components/app/add-option/Add-Option';
@@ -92,8 +93,10 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
                 <Header title={this.title} subtitle={this.subtitle} />
                 <div className='container'>
                     <Action options={this.state.options} />
-                    <Options options={this.state.options}  removeIndividual={this.removeIndividual} />
-                    <AddOption addOption={this.addOption} />               
+                    <div className='widget'>
+                        <Options options={this.state.options}  removeIndividual={this.removeIndividual} />
+                        <AddOption addOption={this.addOption} />               
+                    </div>
                 </div>
             </React.Fragment>
         );

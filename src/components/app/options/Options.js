@@ -4,6 +4,7 @@ import './Options.scss';
 import Option from '../option/Option';
 import * as React from 'react';
 import uniqid from 'uniqid';
+import { ClassicButton, LinkButton } from '../../common/button/Button';
 
 /**
  * @type OptionsPropsType Props type anotaton for Option list component.
@@ -27,12 +28,19 @@ class Options extends React.Component<OptionsPropsType> {
             }));
 
             return (
-                <React.Fragment>
-                    <p>Here are your options:</p>
-                        <ol>
-                            {items}
-                        </ol>
-                </React.Fragment>
+                <div>
+                    <div className='widget-header'>
+                        <h3 className='widget-header__title'>Your options</h3>
+                        <LinkButton>Remove all</LinkButton>
+                    </div>
+
+                    {this.props.options.length === 0 && <p className='widget__message'>Please add an option to get started!</p> }
+        
+                    <ol>
+                        {items}
+                    </ol>
+                </div>
+                
             );
         }
     }
