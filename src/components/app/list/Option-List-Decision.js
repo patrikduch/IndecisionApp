@@ -17,9 +17,9 @@ type OptionListDecisionPropsType = {
 class OptionListDecision extends React.Component<OptionListDecisionPropsType> {
 
     /**
-     * @function makeDecisionHandler Toggler of modal that shows information about randomly selected todo item.
+     * @function handlePickHandler Toggler of modal that shows information about randomly selected todo item.
      */
-    makeDecisionHandler: (() => void) = () => {
+    handlePickHandler: (() => void) = () => {
         const randNum = Math.random() * this.props.options.length;
         const randomIndex = Math.floor(randNum);
 
@@ -28,7 +28,7 @@ class OptionListDecision extends React.Component<OptionListDecisionPropsType> {
 
     render(): React.Node {
         return (
-            <BigButton disabled={this.props.options.length === 0} onClick={this.makeDecisionHandler}>What should I do?</BigButton>
+            <BigButton disabled={this.props.options.length === 0} onClick={this.handlePickHandler}>What should I do?</BigButton>
         );
     }
 }
