@@ -27,6 +27,21 @@ https://flow.org/en/docs/usage/
 https://flow.org/en/docs/install/
 
 
+# FLOW-SASS
+https://stackoverflow.com/questions/41400611/flow-module-not-found-with-scss-file
+
+# FLOW-LINTER
+https://flow.org/en/docs/config/options/#toc-types-first-boolean
+https://www.npmjs.com/package/eslint-plugin-flowtype#eslint-plugin-flowtype-rules-define-flow-type
+https://developer.aliyun.com/mirror/npm/package/eslint-plugin-flowtype/v/2.18.2
+https://github.com/gajus/eslint-plugin-flowtype/blob/42328cd8b081eb60da4a9b65b920dda155d35d8e/src/configs/recommended.json#L14
+https://developer.aliyun.com/mirror/npm/package/babel-eslint
+https://github.com/gajus/eslint-plugin-flowtype/issues/245
+https://stackoverflow.com/questions/43194302/disable-eslint-for-all-files-in-directory-and-subdirectories
+https://github.com/gajus/eslint-plugin-flowtype
+
+
+
 # FLOW NODE_MODULES ERRORS
 https://github.com/facebook/flow/issues/5023
 
