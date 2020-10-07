@@ -11,6 +11,7 @@ import { ClassicButton, LinkButton } from '../../common/button/Button';
  */
 type OptionsPropsType = {
     options: string[];
+    removeAll(): void;
     removeIndividual(searchedElement: string) : void;
 };
 
@@ -23,22 +24,21 @@ class Options extends React.Component<OptionsPropsType> {
         if (this.props.options === 0) {
             return (<p>No options</p>);
         } else {
-            const items = this.props.options.map((option => {
-                return <Option key={uniqid()} onClick={() => this.props.removeIndividual(option)} option={option} />;
-            }));
+            const items = this.props.options.map((option, index)=> {
+                return <Option itemId={index+1} key={uniqid()} onClick={() => this.props.removeIndividual(option)} option={option} />;
+            });
 
             return (
                 <div>
                     <div className='widget-header'>
                         <h3 className='widget-header__title'>Your options</h3>
-                        <LinkButton>Remove all</LinkButton>
+                        <LinkButton onClick={this.props.removeAll}>Remove all</LinkButton>
                     </div>
 
                     {this.props.options.length === 0 && <p className='widget__message'>Please add an option to get started!</p> }
         
-                    <ol>
-                        {items}
-                    </ol>
+                    {items}
+                
                 </div>
                 
             );

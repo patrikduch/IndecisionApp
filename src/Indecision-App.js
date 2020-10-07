@@ -94,7 +94,7 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
                 <div className='container'>
                     <Action options={this.state.options} />
                     <div className='widget'>
-                        <Options options={this.state.options}  removeIndividual={this.removeIndividual} />
+                        <Options options={this.state.options} removeAll={this.removeAll}  removeIndividual={this.removeIndividual} />
                         <AddOption addOption={this.addOption} />               
                     </div>
                 </div>

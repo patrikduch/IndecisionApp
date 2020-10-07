@@ -8,6 +8,7 @@ import * as React from 'react';
  * @type OptionPropsType Props type anotaton of single option component element.
  */
 type OptionPropsType = {
+    itemId: number;
     option: string;
     onClick(): void;
 };
@@ -18,9 +19,10 @@ type OptionPropsType = {
 class Option extends React.Component<OptionPropsType> {
     render(): React.Node {
         return (
-            <li>{this.props.option}
+            <div className='option'>
+                <p className='option__text'>{this.props.itemId}. {this.props.option}</p>
                 <LinkButton onClick={this.props.onClick}>Remove</LinkButton>
-            </li>
+            </div>
         );
     }
 }

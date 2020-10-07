@@ -8,4 +8,4 @@ html{font-size:62.5%}body{background:#333745;font-family:Arial,Helvetica,sans-se
 
 
 .options-list{color:#fff}
-
+.option{border-bottom:1px solid #5c627b;display:flex;justify-content:space-between;padding:3.2rem 1.6rem;margin-left:0}.option__text{color:#fff;font-weight:500;font-size:1.6rem;margin:0}
