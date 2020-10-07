@@ -61,8 +61,8 @@ class AddOption extends React.Component<OptionsPropsType, OptionsStateType> {
     render(): React.Node {
         return (
             <React.Fragment>
-                <form onSubmit={this.onFormSubmit}>
-                    <input type='text' name='option' onChange={this.onTodoNameChangeHandler} value={this.state.todoName}/>
+                <form className='add-option' onSubmit={this.onFormSubmit}>
+                    <input className='add-option__input' type='text' name='option' onChange={this.onTodoNameChangeHandler} value={this.state.todoName}/>
                     <ClassicButton>Add option</ClassicButton>
                 </form>
             </React.Fragment>
