@@ -29,6 +29,9 @@ class Action extends React.Component<ActionPropsType, ActionStateType> {
         selectedOption: null
     };
 
+    /**
+     * @function makeDecisionHandler Random pickup todo item from option list.
+     */
     makeDecisionHandler: (() => void) = () => {
         const randNum = Math.random() * this.props.options.length;
         const randomIndex = Math.floor(randNum);
@@ -38,6 +41,9 @@ class Action extends React.Component<ActionPropsType, ActionStateType> {
         });
     };
 
+    /**
+     * @function onCloseModalHandler Handler for button closing action.
+     */
     onCloseModalHandler: (() => void) = () => {
         this.setState({
             selectedOption: null

@@ -50,7 +50,7 @@ class AddOption extends React.Component<OptionsPropsType, OptionsStateType> {
 
     /**
      * @function onTodoNameChangeHandler Change handler fro name text input.
-     * @param {*} e 
+     * @param {*} e Synthentic Event instance. 
      */
     onTodoNameChangeHandler: ((e: any) => void) = (e: any) => {
         this.setState({

@@ -19,7 +19,6 @@ type OptionsPropsType = {
  * @class Option list component that renders all todo items.
  */
 class Options extends React.Component<OptionsPropsType> {
-
     render(): React.Node {
         if (this.props.options === 0) {
             return (<p>No options</p>);
@@ -30,17 +29,13 @@ class Options extends React.Component<OptionsPropsType> {
 
             return (
                 <div>
-                    <div className='widget-header'>
-                        <h3 className='widget-header__title'>Your options</h3>
+                    <div className='options-header'>
+                        <h3 className='options-header__title'>Your options</h3>
                         <LinkButton onClick={this.props.removeAll}>Remove all</LinkButton>
                     </div>
-
-                    {this.props.options.length === 0 && <p className='widget__message'>Please add an option to get started!</p> }
-        
+                    {this.props.options.length === 0 && <p className='options__message'>Please add an option to get started!</p> }
                     {items}
-                
                 </div>
-                
             );
         }
     }

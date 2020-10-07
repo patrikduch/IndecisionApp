@@ -2,7 +2,6 @@
 import * as React from 'react';
 import Modal from 'react-modal';
 
-
 /**
  * @type ActionPropsType Props type anotaton
  */
@@ -10,8 +9,10 @@ type OptionModalPropsType = {
     selectedOption: null | string;
 };
 
-
-
+/**
+ * @function OptionModal Modal for displaying randomly selected Todo item.
+ * @param {*} props Properties that are passed into component.
+ */
 const OptionModal = (props: OptionModalPropsType): React$Element<"div"> => (
     <div>
         <Modal isOpen={!!props.selectedOption} contentLabel='Selected option'>
