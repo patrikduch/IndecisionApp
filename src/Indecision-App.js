@@ -7,10 +7,10 @@ import Action from './components/app/action/Action';
 import AddOption from './components/app/add-option/Add-Option';
 import Header from './components/skeleton/Header';
 import { LinkButton } from './components/common/button/Button';
-import OptionListDecision from './components/app/list/Option-List-Decision';
-import OptionListRemoval from './components/app/list/Option-List-Removal';
+import OptionListRemoval from './components/app/option-remove/Option-List-Removal';
 import Options from './components/app/options/Options';
 import * as React from 'react';
+import OptionModal from './components/app/option-modal/Option-Modal';
 
 /**
  * @type AppPropsType Props type anotaton for App component.
@@ -22,7 +22,6 @@ type IndecisionAppPropsType = {};
  */
 type IndecisionAppStateType = {
     options: string[];
-    isTogglerVisible: boolean;
 };
 
 /**
@@ -35,7 +34,7 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
 
     state: IndecisionAppStateType = {
         options: [],
-        isTogglerVisible: false
+        selectedOption: null
     }
 
     /**
@@ -57,10 +56,6 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
             // Update local state option array with newly inserted value
             this.setState({
                 options: newArray   
-            });
-        
-            this.setState({
-                isTogglerVisible: true
             });
         }
     }
