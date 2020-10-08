@@ -21,7 +21,7 @@ type OptionModalPropsType = {
 const OptionModal = (props: OptionModalPropsType): React$Element<"div"> => {
     return (
         <div>
-            <Modal isOpen={props.selectedOption} contentLabel='Selected option' className='modal' onRequestClose={props.closeModal} >
+            <Modal ariaHideApp={false} isOpen={!!props.selectedOption} contentLabel='Selected option' className='modal' onRequestClose={props.closeModal} >
                 <h3 className='modal__title'>Selected option</h3>
                 {props.selectedOption ? <p className='modal__body'>{props.selectedOption}</p>: null}
                 <ClassicButton onClick={props.closeModal}>Okay</ClassicButton>
