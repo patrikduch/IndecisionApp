@@ -10,7 +10,7 @@ import OptionListRemoval from './components/app/option-remove/Option-List-Remova
 import Options from './components/app/options/Options';
 import * as React from 'react';
 import OptionModal from './components/app/option-modal/Option-Modal';
-
+import Modal from 'react-modal';
 /**
  * @type AppPropsType Props type anotaton for App component.
  */
@@ -91,7 +91,7 @@ class IndecisionApp extends React.Component<IndecisionAppPropsType,IndecisionApp
                         <Options options={this.state.options} removeAll={this.removeAll}  removeIndividual={this.removeIndividual} />
                         <AddOption addOption={this.addOption} />               
                     </div>
-                </div>
+                </div>       
             </React.Fragment>
         );
     }

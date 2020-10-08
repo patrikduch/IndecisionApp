@@ -4,6 +4,7 @@ import './Action.scss';
 import { BigButton, ClassicButton } from '../../common/button/Button';
 import Modal from 'react-modal';
 import * as React from 'react';
+import OptionModal from '../option-modal/Option-Modal';
 
 /**
  * @type ActionPropsType Props type anotaton
@@ -57,12 +58,8 @@ class Action extends React.Component<ActionPropsType, ActionStateType> {
                     What should I do?
                 </BigButton>
                 
-                <Modal isOpen={this.state.selectedOption} contentLabel='Selected option' 
-                    onRequestClose={this.onCloseModalHandler}>
-                    <h3>Selected option</h3>
-                    {this.state.selectedOption ? <p>{this.state.selectedOption}</p>: null}
-                    <ClassicButton onClick={this.onCloseModalHandler}>Okay</ClassicButton>
-                </Modal>
+                <OptionModal selectedOption={this.state.selectedOption} closeModal={this.onCloseModalHandler} />
+                
             </React.Fragment>
         );
     }
